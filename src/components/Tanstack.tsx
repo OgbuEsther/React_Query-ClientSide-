@@ -60,7 +60,7 @@ const Tanstack = () => {
                 key={e._id}
                 style={{
                   width: "300px",
-                  height: "300px",
+                  height: "200px",
                   backgroundColor: "aliceblue",
                   marginLeft: "30px",
                   marginRight: "30px",
