@@ -32,16 +32,23 @@ const Tanstack = () => {
               flexWrap: "wrap",
             }}
           >
-            <div
-              style={{
-                width: "300px",
-                height: "300px",
-                backgroundColor: "aliceblue",
-                marginLeft: "30px",
-                marginRight: "30px",
-                boxShadow: "0px 0px 3px 1px rgba(0,0,0,0.1)",
-              }}
-            ></div>
+            {getData?.data?.map((e: any) => (
+              <div
+                key={e._id}
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  backgroundColor: "aliceblue",
+                  marginLeft: "30px",
+                  marginRight: "30px",
+                  marginBottom: "30px",
+                  boxShadow: "0px 0px 3px 1px rgba(0,0,0,0.1)",
+                }}
+              >
+                <h3> {e.title}</h3>
+                <pre>{e.description} </pre>
+              </div>
+            ))}
           </div>
         </div>
       </center>
