@@ -1,7 +1,6 @@
 import React from "react";
 import { getAll, newPost } from "./api/api";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { title } from "process";
 
 const Tanstack = () => {
   const [title, setTitle] = React.useState("");
@@ -20,6 +19,7 @@ const Tanstack = () => {
       description: description,
     });
   };
+  console.log("this is action", actions);
 
   console.log("this is get data", getData);
   return (
@@ -43,7 +43,9 @@ const Tanstack = () => {
         />
         <br />
 
-        <button style={{ marginTop: "20px" }}>upload</button>
+        <button onClick={actions} style={{ marginTop: "20px" }}>
+          upload
+        </button>
 
         <div>
           <h1>view your post below</h1>
