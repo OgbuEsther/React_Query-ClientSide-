@@ -1,8 +1,11 @@
 import React from "react";
 import { getAll, newPost } from "./api/api";
 import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Tanstack = () => {
+  const client = useQueryClient();
+
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const getData = useQuery({
@@ -11,6 +14,9 @@ const Tanstack = () => {
   });
   const uploadData = useMutation({
     mutationFn: newPost,
+    onSuccess: (data) => {
+      client.invalidateQueries(["socialMediaPost"]);
+    },
   });
 
   const actions = () => {
