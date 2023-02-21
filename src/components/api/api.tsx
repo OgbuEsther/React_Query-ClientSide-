@@ -7,5 +7,5 @@ export const getAll = async () => {
 };
 
 export const newPost = async () => {
-  return await axios.post(`${endPoints}/createpost`, { title, description });
+  return await axios.post(`${endPoints}/createpost`);
 };
