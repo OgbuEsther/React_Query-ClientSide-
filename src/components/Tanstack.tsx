@@ -1,6 +1,13 @@
 import React from "react";
+import { getAll } from "./api/api";
+import { useQuery } from "@tanstack/react-query";
 
 const Tanstack = () => {
+  const getData = useQuery({
+    queryKey: ["socialMediaPost"],
+    queryFn: getAll,
+  });
+  console.log("this is get data", getData);
   return (
     <div>
       <center style={{ marginTop: "100px" }}>
