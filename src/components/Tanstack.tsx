@@ -1,8 +1,11 @@
 import React from "react";
 import { getAll, newPost } from "./api/api";
 import { useQuery, useMutation } from "@tanstack/react-query";
+import { title } from "process";
 
 const Tanstack = () => {
+  const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
   const getData = useQuery({
     queryKey: ["socialMediaPost"],
     queryFn: getAll,
@@ -13,8 +16,8 @@ const Tanstack = () => {
 
   const actions = () => {
     uploadData.mutate({
-      title,
-      description,
+      title: title,
+      description: description,
     });
   };
 
@@ -22,9 +25,18 @@ const Tanstack = () => {
   return (
     <div>
       <center style={{ marginTop: "100px" }}>
-        <input type="text" placeholder="Enter your title" />
+        <input
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+          type="text"
+          placeholder="Enter your title"
+        />
         <br />
         <input
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
           style={{ marginTop: "20px" }}
           type="text"
           placeholder="Enter your description"
