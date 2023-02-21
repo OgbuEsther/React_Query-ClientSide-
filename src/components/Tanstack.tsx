@@ -10,6 +10,14 @@ const Tanstack = () => {
   const uploadData = useMutation({
     mutationFn: newPost,
   });
+
+  const actions = () => {
+    uploadData.mutate({
+      title,
+      description,
+    });
+  };
+
   console.log("this is get data", getData);
   return (
     <div>
