@@ -34,7 +34,7 @@ const Container = styled.form`
   input {
     width: 300px;
     height: 30px;
-    border-radius: 2px;
+    border-radius: 3px;
     border: 0.1px solid black;
     outline: none;
     background-color: transparent;
