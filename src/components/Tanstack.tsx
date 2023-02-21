@@ -19,9 +19,7 @@ const Tanstack = () => {
       description: description,
     });
   };
-  console.log("this is action", actions);
 
-  console.log("this is get data", getData);
   return (
     <div>
       <center style={{ marginTop: "100px" }}>
