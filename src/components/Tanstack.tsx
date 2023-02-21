@@ -61,6 +61,8 @@ const Tanstack = () => {
               flexWrap: "wrap",
             }}
           >
+            {getData?.isLoading ? <p>awaiting data</p> : null}
+
             {getData?.data?.map((e: any) => (
               <div
                 key={e._id}
