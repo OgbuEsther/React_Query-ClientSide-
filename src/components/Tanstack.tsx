@@ -1,11 +1,14 @@
 import React from "react";
-import { getAll } from "./api/api";
-import { useQuery } from "@tanstack/react-query";
+import { getAll, newPost } from "./api/api";
+import { useQuery, useMutation } from "@tanstack/react-query";
 
 const Tanstack = () => {
   const getData = useQuery({
     queryKey: ["socialMediaPost"],
     queryFn: getAll,
+  });
+  const uploadData = useMutation({
+    mutationFn: newPost,
   });
   console.log("this is get data", getData);
   return (
